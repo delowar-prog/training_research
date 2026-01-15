@@ -4,7 +4,7 @@ const Research = () => {
   return (
     <section id="research" className="py-16 lg:py-20 bg-slate-900 text-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-4 reveal" data-reveal>
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold">Latest Research Highlights</h2>
             <p className="mt-2 text-slate-300 text-sm sm:text-base max-w-2xl">
@@ -21,7 +21,11 @@ const Research = () => {
         </div>
 
         <div className="mt-8 grid md:grid-cols-3 gap-6">
-          <article className="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/70">
+          <article
+            className="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/70 reveal"
+            data-reveal
+            data-reveal-delay="120"
+          >
             <p className="text-xs uppercase tracking-wide text-slate-400">
               Education Technology &middot; 2025
             </p>
@@ -40,7 +44,11 @@ const Research = () => {
             </a>
           </article>
 
-          <article className="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/70">
+          <article
+            className="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/70 reveal"
+            data-reveal
+            data-reveal-delay="240"
+          >
             <p className="text-xs uppercase tracking-wide text-slate-400">
               Data &amp; Policy &middot; 2025
             </p>
@@ -59,7 +67,11 @@ const Research = () => {
             </a>
           </article>
 
-          <article className="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/70">
+          <article
+            className="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/70 reveal"
+            data-reveal
+            data-reveal-delay="360"
+          >
             <p className="text-xs uppercase tracking-wide text-slate-400">
               Social Impact &middot; 2024
             </p>

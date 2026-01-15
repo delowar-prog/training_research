@@ -8,11 +8,13 @@ import Notices from "./components/Notices";
 import Partners from "./components/Partners";
 import ContactSection from "./components/Contact";
 import Footer from "./components/Footer";
+import RevealObserver from "./components/RevealObserver";
 
 function Page() {
   return (
     <div className="bg-slate-50 text-slate-900 antialiased">
       <Navbar />
+      <RevealObserver />
       <main id="home">
         <Hero />
         <Overview />

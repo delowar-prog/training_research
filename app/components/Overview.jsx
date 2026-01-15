@@ -4,7 +4,7 @@ const Overview = () => {
   return (
     <section id="overview" className="py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-4 reveal" data-reveal>
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
               Institute Overview
@@ -20,7 +20,11 @@ const Overview = () => {
         </div>
 
         <div className="mt-8 grid md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 sm:p-8">
+          <div
+            className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 sm:p-8 reveal"
+            data-reveal
+            data-reveal-delay="120"
+          >
             <h3 className="text-lg font-semibold text-slate-900">Our Mission</h3>
             <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
               To empower professionals, students, and organizations with practical skills and
@@ -42,7 +46,11 @@ const Overview = () => {
             </ul>
           </div>
 
-          <div className="bg-slate-900 rounded-2xl shadow-sm p-6 sm:p-8 text-slate-50">
+          <div
+            className="bg-slate-900 rounded-2xl shadow-sm p-6 sm:p-8 text-slate-50 reveal"
+            data-reveal
+            data-reveal-delay="240"
+          >
             <h3 className="text-lg font-semibold">Our Vision</h3>
             <p className="mt-3 text-sm sm:text-base text-slate-200 leading-relaxed">
               To be a leading hub for professional training and applied research in the region,

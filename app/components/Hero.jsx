@@ -1,117 +1,151 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
+
+const CountUp = ({ value, duration = 1800 }) => {
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    let frame;
+    let start;
+
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReducedMotion) {
+      setDisplay(value);
+      return;
+    }
+
+    const step = (timestamp) => {
+      if (start === undefined) {
+        start = timestamp;
+      }
+
+      const progress = Math.min((timestamp - start) / duration, 1);
+      setDisplay(Math.floor(progress * value));
+
+      if (progress < 1) {
+        frame = requestAnimationFrame(step);
+      }
+    };
+
+    frame = requestAnimationFrame(step);
+    return () => {
+      if (frame) {
+        cancelAnimationFrame(frame);
+      }
+    };
+  }, [value, duration]);
+
+  return <span>{display.toLocaleString()}</span>;
+};
 
 const Hero = () => {
   return (
-    <section className="bg-gradient-to-b from-primary-50 to-slate-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
-          <div>
-            <span className="inline-flex items-center rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700 mb-4">
-              Training &bull; Research &bull; Innovation
-            </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">
-              Build Future-Ready Skills &amp; Drive{" "}
-              <span className="text-primary-600">Impactful Research</span>
-            </h1>
-            <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-xl">
-              Our institute blends hands-on professional training with applied research to help
-              individuals, organizations, and communities grow with confidence.
-            </p>
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <a
-                href="#trainings"
-                className="inline-flex items-center rounded-full bg-primary-600 px-6 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-primary-700 transition"
-              >
-                View Trainings
-              </a>
-              <a
-                href="#research"
-                className="inline-flex items-center rounded-full border border-slate-300 px-6 py-2.5 text-sm font-medium text-slate-700 hover:border-primary-500 hover:text-primary-600 transition"
-              >
-                Explore Research
-              </a>
-            </div>
-            <dl className="mt-8 grid grid-cols-3 gap-4 max-w-md text-center sm:text-left sm:max-w-none">
-              <div>
-                <dt className="text-xs uppercase text-slate-500 tracking-wide">
-                  Professionals Trained
-                </dt>
-                <dd className="text-xl font-semibold text-slate-900">5,000+</dd>
-              </div>
-              <div>
-                <dt className="text-xs uppercase text-slate-500 tracking-wide">
-                  Research Projects
-                </dt>
-                <dd className="text-xl font-semibold text-slate-900">120+</dd>
-              </div>
-              <div>
-                <dt className="text-xs uppercase text-slate-500 tracking-wide">
-                  Industry Partners
-                </dt>
-                <dd className="text-xl font-semibold text-slate-900">30+</dd>
-              </div>
-            </dl>
+    <section className="relative min-h-[70vh] overflow-hidden">
+      <div className="absolute inset-0">
+        <div
+          aria-hidden="true"
+          className="hero-slide hero-slide-1"
+          style={{
+            backgroundImage:
+              "url('/hero/hero-1.jpg')",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="hero-slide hero-slide-2"
+          style={{
+            backgroundImage:
+              "url('/hero/hero-2.jpg')",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="hero-slide hero-slide-3"
+          style={{
+            backgroundImage:
+              "url('/hero/hero-3.jpg')",
+          }}
+        />
+        <div className="absolute inset-0 bg-slate-950/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/50 to-slate-950/10" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+        <div className="text-white">
+          <span
+            className="mb-4 inline-flex items-center rounded-full bg-white/15 px-3 py-1 text-xs font-medium text-primary-100 backdrop-blur reveal"
+            data-reveal
+          >
+            Training &bull; Research &bull; Innovation
+          </span>
+          <h1
+            className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-6xl reveal"
+            data-reveal
+            data-reveal-delay="120"
+          >
+            Build Future-Ready Skills &amp; Drive{" "}
+            <span className="text-primary-200">Impactful Research</span>
+          </h1>
+          <p
+            className="mt-4 text-base text-slate-100/90 sm:text-lg lg:text-xl reveal"
+            data-reveal
+            data-reveal-delay="240"
+          >
+            Our institute blends hands-on professional training with applied research to help
+            individuals, organizations, and communities grow with confidence.
+          </p>
+          <div
+            className="mt-6 flex flex-wrap items-center gap-3 reveal"
+            data-reveal
+            data-reveal-delay="360"
+          >
+            <a
+              href="#trainings"
+              className="inline-flex items-center rounded-full bg-primary-600 px-6 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-primary-500"
+            >
+              View Trainings
+            </a>
+            <a
+              href="#research"
+              className="inline-flex items-center rounded-full border border-white/40 px-6 py-2.5 text-sm font-medium text-white transition hover:border-primary-300 hover:text-primary-200"
+            >
+              Explore Research
+            </a>
           </div>
-
-          <div className="relative">
-            <div className="relative bg-white rounded-3xl shadow-lg border border-slate-100 p-6 sm:p-8">
-              <h2 className="text-sm font-semibold text-slate-900 flex items-center justify-between">
-                Next Cohort Starts
-                <span className="inline-flex items-center rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700">
-                  Enrolling Now
-                </span>
-              </h2>
-
-              <div className="mt-4 space-y-3">
-                <div className="flex items-start space-x-3">
-                  <div className="mt-1 h-2 w-2 rounded-full bg-primary-500" />
-                  <div>
-                    <p className="text-sm font-medium text-slate-900">
-                      Data Analytics &amp; Visualization Bootcamp
-                    </p>
-                    <p className="text-xs text-slate-500">
-                      Duration: 8 Weeks &middot; Hybrid &middot; Evening Batch
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="mt-1 h-2 w-2 rounded-full bg-primary-500" />
-                  <div>
-                    <p className="text-sm font-medium text-slate-900">
-                      Education Technology Research Fellowship
-                    </p>
-                    <p className="text-xs text-slate-500">
-                      Mentored research with publication support
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="mt-1 h-2 w-2 rounded-full bg-primary-500" />
-                  <div>
-                    <p className="text-sm font-medium text-slate-900">
-                      Leadership &amp; Soft Skills for Educators
-                    </p>
-                    <p className="text-xs text-slate-500">
-                      Target: Teachers, Coordinators, Academic Leaders
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-6 border-t border-slate-200 pt-4 flex items-center justify-between">
-                <p className="text-xs text-slate-500">
-                  Scholarships &amp; group discounts available.
-                </p>
-                <a
-                  href="#contact"
-                  className="text-xs font-semibold text-primary-600 hover:text-primary-700"
-                >
-                  Talk to our team &rarr;
-                </a>
-              </div>
+          <dl className="mt-10 grid grid-cols-1 gap-6 text-left sm:grid-cols-3">
+            <div className="reveal" data-reveal data-reveal-delay="480">
+              <dt className="text-sm uppercase tracking-wide text-slate-200/80">
+                Professionals Trained
+              </dt>
+              <dd className="mt-2 text-3xl font-semibold text-white sm:text-4xl">
+                <CountUp value={5000} />
+                <span>+</span>
+              </dd>
             </div>
-            <div className="pointer-events-none absolute -bottom-6 -right-4 h-32 w-32 rounded-full bg-primary-100 blur-2xl opacity-70" />
-          </div>
+            <div className="reveal" data-reveal data-reveal-delay="600">
+              <dt className="text-sm uppercase tracking-wide text-slate-200/80">
+                Research Projects
+              </dt>
+              <dd className="mt-2 text-3xl font-semibold text-white sm:text-4xl">
+                <CountUp value={120} />
+                <span>+</span>
+              </dd>
+            </div>
+            <div className="reveal" data-reveal data-reveal-delay="720">
+              <dt className="text-sm uppercase tracking-wide text-slate-200/80">
+                Industry Partners
+              </dt>
+              <dd className="mt-2 text-3xl font-semibold text-white sm:text-4xl">
+                <CountUp value={30} />
+                <span>+</span>
+              </dd>
+            </div>
+          </dl>
         </div>
       </div>
     </section>

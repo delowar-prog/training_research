@@ -12,7 +12,7 @@ const Contact = () => {
     <section id="contact" className="py-16 lg:py-20 bg-primary-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
-          <div>
+          <div className="reveal" data-reveal>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
               Talk to our academic counseling team
             </h2>
@@ -27,7 +27,9 @@ const Contact = () => {
             </ul>
           </div>
           <form
-            className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 space-y-4"
+            className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 space-y-4 reveal"
+            data-reveal
+            data-reveal-delay="120"
             onSubmit={handleSubmit}
           >
             <div>

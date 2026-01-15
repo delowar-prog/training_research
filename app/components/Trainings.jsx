@@ -4,7 +4,7 @@ const Trainings = () => {
   return (
     <section id="trainings" className="py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-4 reveal" data-reveal>
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
               Ongoing &amp; Upcoming Trainings
@@ -23,7 +23,11 @@ const Trainings = () => {
 
         <div className="mt-8 grid md:grid-cols-3 gap-6">
           {/* Training Card 1 */}
-          <article className="flex flex-col bg-slate-50 rounded-2xl border border-slate-200/80 p-5">
+          <article
+            className="flex flex-col bg-slate-50 rounded-2xl border border-slate-200/80 p-5 reveal"
+            data-reveal
+            data-reveal-delay="120"
+          >
             <div className="flex items-center justify-between text-xs mb-3">
               <span className="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 font-medium text-green-700">
                 Ongoing
@@ -52,7 +56,11 @@ const Trainings = () => {
           </article>
 
           {/* Card 2 */}
-          <article className="flex flex-col bg-slate-50 rounded-2xl border border-slate-200/80 p-5">
+          <article
+            className="flex flex-col bg-slate-50 rounded-2xl border border-slate-200/80 p-5 reveal"
+            data-reveal
+            data-reveal-delay="240"
+          >
             <div className="flex items-center justify-between text-xs mb-3">
               <span className="inline-flex items-center rounded-full bg-amber-100 px-2.5 py-0.5 font-medium text-amber-700">
                 Upcoming
@@ -81,7 +89,11 @@ const Trainings = () => {
           </article>
 
           {/* Card 3 */}
-          <article className="flex flex-col bg-slate-50 rounded-2xl border border-slate-200/80 p-5">
+          <article
+            className="flex flex-col bg-slate-50 rounded-2xl border border-slate-200/80 p-5 reveal"
+            data-reveal
+            data-reveal-delay="360"
+          >
             <div className="flex items-center justify-between text-xs mb-3">
               <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 font-medium text-blue-700">
                 Upcoming

@@ -4,7 +4,7 @@ const Notices = () => {
   return (
     <section id="notices" className="py-16 lg:py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-4 reveal" data-reveal>
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
               Notices &amp; Announcements
@@ -22,7 +22,11 @@ const Notices = () => {
           </a>
         </div>
 
-        <div className="mt-6 bg-white border border-slate-200 rounded-2xl divide-y divide-slate-100">
+        <div
+          className="mt-6 bg-white border border-slate-200 rounded-2xl divide-y divide-slate-100 reveal"
+          data-reveal
+          data-reveal-delay="120"
+        >
           {/* Notice item 1 */}
           <article className="flex flex-col sm:flex-row sm:items-center gap-3 px-4 sm:px-6 py-4">
             <div className="sm:w-40">
