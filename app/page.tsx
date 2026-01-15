@@ -12,7 +12,7 @@ import RevealObserver from "./components/RevealObserver";
 
 function Page() {
   return (
-    <div className="bg-slate-50 text-slate-900 antialiased">
+    <div className="bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
       <Navbar />
       <RevealObserver />
       <main id="home">

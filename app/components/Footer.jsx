@@ -4,7 +4,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-slate-200 bg-white">
+    <footer className="border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div
           className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr] reveal"
@@ -16,38 +16,40 @@ const Footer = () => {
                 TI
               </div>
               <div>
-                <p className="text-sm font-semibold text-slate-900">
+                <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                   Training &amp; Research Institute
                 </p>
-                <p className="text-xs text-slate-500">Learning &bull; Innovation &bull; Impact</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  Learning &bull; Innovation &bull; Impact
+                </p>
               </div>
             </div>
-            <p className="mt-4 text-sm text-slate-600 max-w-md">
+            <p className="mt-4 text-sm text-slate-600 max-w-md dark:text-slate-300">
               Exclusive learning and research programs designed for institutions that value
               evidence, impact, and long-term capability building.
             </p>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold text-slate-900">Company</h4>
-            <ul className="mt-3 space-y-2 text-sm text-slate-600">
+            <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Company</h4>
+            <ul className="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300">
               <li>
-                <a href="#overview" className="hover:text-primary-600">
+                <a href="#overview" className="hover:text-primary-600 dark:hover:text-primary-300">
                   About
                 </a>
               </li>
               <li>
-                <a href="#trainings" className="hover:text-primary-600">
+                <a href="#trainings" className="hover:text-primary-600 dark:hover:text-primary-300">
                   Programs
                 </a>
               </li>
               <li>
-                <a href="#research" className="hover:text-primary-600">
+                <a href="#research" className="hover:text-primary-600 dark:hover:text-primary-300">
                   Research
                 </a>
               </li>
               <li>
-                <a href="#partners" className="hover:text-primary-600">
+                <a href="#partners" className="hover:text-primary-600 dark:hover:text-primary-300">
                   Partners
                 </a>
               </li>
@@ -55,25 +57,25 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold text-slate-900">Resources</h4>
-            <ul className="mt-3 space-y-2 text-sm text-slate-600">
+            <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Resources</h4>
+            <ul className="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300">
               <li>
-                <a href="#" className="hover:text-primary-600">
+                <a href="#" className="hover:text-primary-600 dark:hover:text-primary-300">
                   Docs
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary-600">
+                <a href="#" className="hover:text-primary-600 dark:hover:text-primary-300">
                   Support
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary-600">
+                <a href="#" className="hover:text-primary-600 dark:hover:text-primary-300">
                   Case studies
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary-600">
+                <a href="#" className="hover:text-primary-600 dark:hover:text-primary-300">
                   Publications
                 </a>
               </li>
@@ -81,8 +83,8 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold text-slate-900">Contact</h4>
-            <ul className="mt-3 space-y-2 text-sm text-slate-600">
+            <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Contact</h4>
+            <ul className="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300">
               <li>hello@tri.edu</li>
               <li>+880 1711 000 000</li>
               <li>Dhaka, Bangladesh</li>
@@ -90,22 +92,22 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-10 h-px bg-slate-200/80" />
+        <div className="mt-10 h-px bg-slate-200/80 dark:bg-slate-800" />
 
         <div
-          className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 reveal"
+          className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 reveal dark:text-slate-400"
           data-reveal
           data-reveal-delay="120"
         >
           <p>&copy; {year} Training &amp; Research Institute. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-primary-600">
+            <a href="#" className="hover:text-primary-600 dark:hover:text-primary-300">
               Privacy
             </a>
-            <a href="#" className="hover:text-primary-600">
+            <a href="#" className="hover:text-primary-600 dark:hover:text-primary-300">
               Terms
             </a>
-            <a href="#home" className="hover:text-primary-600">
+            <a href="#home" className="hover:text-primary-600 dark:hover:text-primary-300">
               Back to top &uarr;
             </a>
           </div>

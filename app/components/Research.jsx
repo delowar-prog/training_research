@@ -2,7 +2,7 @@ import React from "react";
 
 const Research = () => {
   return (
-    <section id="research" className="py-16 lg:py-20 bg-slate-900 text-slate-50">
+    <section id="research" className="py-16 lg:py-20 bg-slate-900 text-slate-50 dark:bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4 reveal" data-reveal>
           <div>
@@ -22,7 +22,7 @@ const Research = () => {
 
         <div className="mt-8 grid md:grid-cols-3 gap-6">
           <article
-            className="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/70 reveal"
+            className="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/70 reveal dark:border-slate-800"
             data-reveal
             data-reveal-delay="120"
           >
@@ -45,7 +45,7 @@ const Research = () => {
           </article>
 
           <article
-            className="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/70 reveal"
+            className="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/70 reveal dark:border-slate-800"
             data-reveal
             data-reveal-delay="240"
           >
@@ -68,7 +68,7 @@ const Research = () => {
           </article>
 
           <article
-            className="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/70 reveal"
+            className="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/70 reveal dark:border-slate-800"
             data-reveal
             data-reveal-delay="360"
           >
