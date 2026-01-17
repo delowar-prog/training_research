@@ -90,12 +90,24 @@ const Page = () => {
   const filteredTrainings = filter === "All" ? trainingsData : trainingsData.filter(t => t.delivery === filter);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <>
       <RevealObserver />
+      <div className="w-full bg-gradient-to-r from-sky-50 via-blue-50 to-indigo-50 border-t-4 border-indigo-600">
+        <div className="relative w-full bg-blue-100 border-t-4 border-blue-600">
+          <svg className="absolute right-0 bottom-0 w-40 sm:w-64 opacity-90 text-blue-200" viewBox="0 0 200 200">
+            <path fill="currentColor" d="M0,0 C100,120 150,80 200,200 L200,0 Z" />
+          </svg>
+
+          <div className="relative pt-12 pb-8 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h1 className="text-center text-2xl sm:text-3xl font-bold text-blue-700">
+              Training Programs
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100">
-            Our Training Programs
-          </h1>
           <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
             Explore a wide range of professional development courses designed for all levels.
           </p>
@@ -108,11 +120,10 @@ const Page = () => {
               <button
                 key={option}
                 onClick={() => setFilter(option)}
-                className={`px-4 py-2 text-sm font-medium rounded-full transition ${
-                  filter === option
+                className={`px-4 py-2 text-sm font-medium rounded-full transition ${filter === option
                     ? "bg-primary-600 text-white shadow-sm"
                     : "text-slate-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-300"
-                }`}
+                  }`}
               >
                 {option}
               </button>
@@ -125,42 +136,45 @@ const Page = () => {
           {filteredTrainings.map((training) => (
             <article
               key={training.id}
-              className="flex flex-col bg-white rounded-2xl border border-slate-200/80 p-5 dark:bg-slate-900 dark:border-slate-800 transition-transform duration-300 ease-in-out hover:-translate-y-[10px] reveal"
+              className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 overflow-hidden
+  transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
+  hover:-translate-y-[10px] hover:shadow-xl hover:shadow-slate-200/70"
               data-reveal
             >
-              <div className="flex items-center justify-between text-xs mb-3">
-                <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 font-medium ${
-                  training.statusColor === 'green' ? 'bg-green-100 text-green-700' :
-                  training.statusColor === 'amber' ? 'bg-amber-100 text-amber-700' :
-                  'bg-blue-100 text-blue-700'
-                }`}>
+              <div className="relative h-60 w-full bg-slate-200">
+                <img src="/courses/course.png" className="w-full h-full object-cover" alt="" />
+                <span className={`absolute top-3 left-3 text-white text-xs rounded-full px-2 py-0.5 ${training.statusColor === 'green' ? 'bg-green-600' :
+                    training.statusColor === 'amber' ? 'bg-yellow-600' :
+                      'bg-blue-600'
+                  }`}>
                   {training.status}
                 </span>
-                <span className="text-slate-500 dark:text-slate-400">{training.mode}</span>
               </div>
-              <h3 className="text-sm sm:text-base font-semibold text-slate-900 dark:text-slate-100">
-                {training.title}
-              </h3>
-              <p className="mt-2 text-sm text-slate-600 flex-1 dark:text-slate-300">
-                {training.description}
-              </p>
-              <dl className="mt-3 space-y-1 text-xs text-slate-600 dark:text-slate-400">
-                <div className="flex justify-between">
-                  <dt>Duration</dt>
-                  <dd>{training.duration}</dd>
+              <div className="p-4">
+                <h3 className="text-sm sm:text-base font-semibold text-slate-900 dark:text-slate-100 line-clamp-2">
+                  {training.title}
+                </h3>
+                <p className="mt-2 text-sm text-slate-600 dark:text-slate-200 line-clamp-2 flex-1">
+                  {training.description}
+                </p>
+                <div className="mt-2 text-xs text-slate-600 dark:text-slate-200 space-y-1 font-bold">
+                  <div className="flex justify-between"><span>Duration</span><span>{training.duration}</span></div>
+                  <div className="flex justify-between"><span>Next Intake</span><span>{training.nextIntake}</span></div>
                 </div>
-                <div className="flex justify-between">
-                  <dt>Next Intake</dt>
-                  <dd>{training.nextIntake}</dd>
+                <div className="mt-4 flex gap-2">
+                  <button className="flex-1 py-2 rounded-full bg-blue-600 text-white text-xs font-medium hover:bg-blue-500">
+                    Registration
+                  </button>
+                  <button className="flex-1 py-2 rounded-full border border-slate-300 text-slate-700 dark:text-slate-200 text-xs font-medium hover:bg-slate-800">
+                    Details
+                  </button>
                 </div>
-              </dl>
-              <button className={`mt-4 inline-flex items-center justify-center rounded-full px-4 py-2 text-xs font-semibold ${training.buttonClass}`}>
-                {training.buttonText}
-              </button>
+              </div>
             </article>
           ))}
         </div>
-    </div>
+      </div>
+    </>
   );
 };
 
