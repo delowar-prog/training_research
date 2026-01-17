@@ -22,106 +22,123 @@ const Trainings = () => {
         </div>
 
         <div className="mt-8 grid md:grid-cols-3 gap-6">
-          {/* Training Card 1 */}
-          <article
-            className="flex flex-col bg-slate-50 rounded-2xl border border-slate-200/80 p-5 reveal dark:bg-slate-900 dark:border-slate-800 transition duration-900 ease-in-out hover:-translate-y-1 hover:cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800"
-            data-reveal
-            data-reveal-delay="120"
-          >
-            <div className="flex items-center justify-between text-xs mb-3">
-              <span className="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 font-medium text-green-700">
+
+          {/* CARD 1 */}
+          <article className="
+  bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 overflow-hidden
+  transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
+  hover:-translate-y-[10px] hover:shadow-xl hover:shadow-slate-200/70
+">
+            {/* Image */}
+            <div className="relative h-60 w-full bg-slate-200">
+              <img src="/courses/course.png" className="img-conainer object-cover" alt="" />
+              <span className="absolute top-3 left-3 bg-green-600 text-white text-xs rounded-full px-2 py-0.5">
                 Ongoing
               </span>
-            <span className="text-slate-500 dark:text-slate-400">Evening &middot; Hybrid</span>
             </div>
-            <h3 className="text-sm sm:text-base font-semibold text-slate-900 dark:text-slate-100">
-              Professional Certificate in Data Analytics
-            </h3>
-            <p className="mt-2 text-sm text-slate-600 flex-1 dark:text-slate-300">
-              Learn Excel, SQL, Power BI, and basic statistics through real datasets and projects.
-            </p>
-            <dl className="mt-3 space-y-1 text-xs text-slate-600 dark:text-slate-400">
-              <div className="flex justify-between">
-                <dt>Duration</dt>
-                <dd>8 Weeks</dd>
+            {/* Content */}
+            <div className="p-4">
+              <h3 className="text-sm sm:text-base font-semibold text-slate-900 line-clamp-2">
+                Professional Certificate in Data Analytics
+              </h3>
+
+              <p className="mt-2 text-sm text-slate-600 dark:text-slate-200 line-clamp-2 flex-1">
+                Learn Excel, SQL, Power BI, and basic statistics through real datasets and projects.
+              </p>
+
+              <div className="mt-2 text-xs text-slate-600 dark:text-slate-200 space-y-1 font-bold">
+                <div className="flex justify-between"><span>Duration</span><span>8 Weeks</span></div>
+                <div className="flex justify-between"><span>Next Intake</span><span>Feb 10, 2026</span></div>
               </div>
-              <div className="flex justify-between">
-                <dt>Next Intake</dt>
-                <dd>Feb 10, 2026</dd>
+
+              <div className="mt-4 flex gap-2">
+                <button className="flex-1 py-2 rounded-full bg-blue-600 text-white text-xs font-medium hover:bg-blue-500">
+                  Registration
+                </button>
+                <button className="flex-1 py-2 rounded-full border border-slate-300 text-slate-700 dark:text-slate-200 text-xs font-medium hover:bg-slate-800">
+                  Details
+                </button>
               </div>
-            </dl>
-            <button className="mt-4 inline-flex items-center justify-center rounded-full bg-primary-600 px-4 py-2 text-xs font-semibold text-white hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-400">
-              Apply for this program
-            </button>
+            </div>
           </article>
 
-          {/* Card 2 */}
-          <article
-            className="flex flex-col bg-slate-50 rounded-2xl border border-slate-200/80 p-5 reveal dark:bg-slate-900 dark:border-slate-800 transition-transform duration-300 ease-in-out hover:-translate-y-[10px] hover:cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800"
-            data-reveal
-            data-reveal-delay="240"
-          >
-            <div className="flex items-center justify-between text-xs mb-3">
-              <span className="inline-flex items-center rounded-full bg-amber-100 px-2.5 py-0.5 font-medium text-amber-700">
+          {/* CARD 2 */}
+          <article className="
+  bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 overflow-hidden
+  transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
+  hover:-translate-y-[10px] hover:shadow-xl hover:shadow-slate-200/70
+">
+            <div className="relative h-60 w-full bg-slate-200">
+              <img src="/courses/course.png" className="img-conainer object-cover" alt="" />
+              <span className="absolute top-3 left-3 bg-yellow-600 text-white text-xs rounded-full px-2 py-0.5">
                 Upcoming
               </span>
-            <span className="text-slate-500 dark:text-slate-400">Weekend &middot; On-Campus</span>
             </div>
-            <h3 className="text-sm sm:text-base font-semibold text-slate-900 dark:text-slate-100">
-              Research Methods &amp; Academic Writing
-            </h3>
-            <p className="mt-2 text-sm text-slate-600 flex-1 dark:text-slate-300">
-              For students, teachers, and professionals planning to conduct and publish research.
-            </p>
-            <dl className="mt-3 space-y-1 text-xs text-slate-600 dark:text-slate-400">
-              <div className="flex justify-between">
-                <dt>Duration</dt>
-                <dd>6 Weeks</dd>
+
+            <div className="p-4">
+              <h3 className="text-sm sm:text-base font-semibold text-slate-900 line-clamp-2">
+                Research Methods & Academic Writing
+              </h3>
+
+              <p className="mt-2 text-sm text-slate-600 dark:text-slate-200 line-clamp-2 flex-1">
+                For students, teachers, and professionals planning to conduct and publish research.
+              </p>
+
+              <div className="mt-2 text-xs text-slate-600 dark:text-slate-200 space-y-1 font-bold">
+                <div className="flex justify-between"><span>Duration</span><span>6 Weeks</span></div>
+                <div className="flex justify-between"><span>Next Intake</span><span>Mar 05, 2026</span></div>
               </div>
-              <div className="flex justify-between">
-                <dt>Next Intake</dt>
-                <dd>Mar 05, 2026</dd>
+
+              <div className="mt-4 flex gap-2">
+                <button className="flex-1 py-2 rounded-full bg-blue-600 text-white text-xs font-medium hover:bg-blue-500">
+                  Registration
+                </button>
+                <button className="flex-1 py-2 rounded-full border border-slate-300 text-slate-700 dark:text-slate-200 text-xs font-medium hover:bg-slate-800">
+                  Details
+                </button>
               </div>
-            </dl>
-            <button className="mt-4 inline-flex items-center justify-center rounded-full border border-primary-600 px-4 py-2 text-xs font-semibold text-primary-600 hover:bg-primary-50 dark:border-primary-400 dark:text-primary-300 dark:hover:bg-slate-800">
-              Pre-register interest
-            </button>
+            </div>
           </article>
 
-          {/* Card 3 */}
-          <article
-            className="flex flex-col bg-slate-50 rounded-2xl border border-slate-200/80 p-5 reveal dark:bg-slate-900 dark:border-slate-800 transition-transform duration-300 ease-in-out hover:-translate-y-[10px] hover:cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800"
-            data-reveal
-            data-reveal-delay="360"
-          >
-            <div className="flex items-center justify-between text-xs mb-3">
-              <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 font-medium text-blue-700">
+          {/* CARD 3 */}
+          <article className="
+  bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 overflow-hidden
+  transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
+  hover:-translate-y-[10px] hover:shadow-xl hover:shadow-slate-200/70
+">
+            <div className="relative h-60 w-full bg-slate-200">
+              <img src="/courses/course.png" className="img-conainer object-cover" alt="" />
+              <span className="absolute top-3 left-3 bg-blue-600 text-white text-xs rounded-full px-2 py-0.5">
                 Upcoming
               </span>
-            <span className="text-slate-500 dark:text-slate-400">Corporate &middot; Customizable</span>
             </div>
-            <h3 className="text-sm sm:text-base font-semibold text-slate-900 dark:text-slate-100">
-              Leadership &amp; Communication for Teams
-            </h3>
-            <p className="mt-2 text-sm text-slate-600 flex-1 dark:text-slate-300">
-              Tailored workshops for organizations focusing on teamwork, leadership, and change
-              management.
-            </p>
-            <dl className="mt-3 space-y-1 text-xs text-slate-600 dark:text-slate-400">
-              <div className="flex justify-between">
-                <dt>Duration</dt>
-                <dd>1&ndash;3 Days</dd>
+
+            <div className="p-4">
+              <h3 className="text-sm sm:text-base font-semibold text-slate-900 line-clamp-2">
+                Leadership & Communication for Teams
+              </h3>
+              <p className="mt-2 text-sm text-slate-600 dark:text-slate-200 line-clamp-2 flex-1">
+                Tailored workshops for organizations focusing on teamwork, leadership, and change management.
+              </p>
+
+              <div className="mt-2 text-xs text-slate-600 dark:text-slate-200 space-y-1 font-bold">
+                <div className="flex justify-between"><span>Duration</span><span>1–3 Days</span></div>
+                <div className="flex justify-between"><span>Mode</span><span>On-site / Online</span></div>
               </div>
-              <div className="flex justify-between">
-                <dt>Mode</dt>
-                <dd>On-site / Online</dd>
+
+              <div className="mt-4 flex gap-2">
+                <button className="flex-1 py-2 rounded-full bg-blue-600 text-white text-xs font-medium hover:bg-blue-500">
+                  Registration
+                </button>
+                <button className="flex-1 py-2 rounded-full border border-slate-300 text-slate-700 dark:text-slate-200 text-xs font-medium hover:bg-slate-800">
+                  Details
+                </button>
               </div>
-            </dl>
-            <button className="mt-4 inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">
-              Request proposal
-            </button>
+            </div>
           </article>
+
         </div>
+
       </div>
     </section>
   );

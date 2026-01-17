@@ -63,21 +63,39 @@ const DirectorsPage = () => {
   return (
     <>
       <RevealObserver />
-      <main className="py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <main className="pt-0 pb-16 lg:pb-20">
+        {/* ====== Top Title Strip (Graphics & Multimedia স্টাইল) ====== */}
+        <div className="w-full bg-gradient-to-r from-sky-50 via-blue-50 to-indigo-50 border-t-4 border-indigo-600">
+          <div className="relative w-full bg-blue-100 border-t-4 border-blue-600">
+            <svg className="absolute right-0 bottom-0 w-40 sm:w-64 opacity-90 text-blue-200" viewBox="0 0 200 200">
+              <path fill="currentColor" d="M0,0 C100,120 150,80 200,200 L200,0 Z" />
+            </svg>
+
+            <div className="relative pt-12 pb-8 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <h1 className="text-center text-2xl sm:text-3xl font-bold text-blue-700">
+                Directors Profile
+              </h1>
+            </div>
+          </div>
+
+        </div>
+
+        {/* ====== Description + Cards আগের মতোই ====== */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
           <div className="text-center mb-12 reveal" data-reveal>
-            <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100">
-              Directors Profile
-            </h1>
-            <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Meet our esteemed directors who lead our institute with vision and expertise.
+            {/* এখানে আর h1 লাগবে না, শুধু সাব-টাইটেল/ডেসক্রিপশন রাখো */}
+            <p className="mt-2 text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+              Meet our esteemed directors who lead our institute with vision and
+              expertise.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {directors.map((director) => (
-              <div key={director.id} className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden text-center">
-
+              <div
+                key={director.id}
+                className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden text-center"
+              >
                 {/* Top background */}
                 <div className="bg-primary-700 h-28 flex justify-center items-end">
                   <img
@@ -120,7 +138,7 @@ const DirectorsPage = () => {
                       <a
                         href={director.linkedin}
                         className="w-9 h-9 flex items-center justify-center rounded-full border text-slate-500 
-                         hover:bg-[#0A66C2] hover:text-white transition"
+                     hover:bg-[#0A66C2] hover:text-white transition"
                       >
                         <FaLinkedinIn />
                       </a>
@@ -129,7 +147,7 @@ const DirectorsPage = () => {
                       <a
                         href={director.twitter}
                         className="w-9 h-9 flex items-center justify-center rounded-full border text-slate-500 
-                         hover:bg-black hover:text-white transition"
+                     hover:bg-black hover:text-white transition"
                       >
                         <FaXTwitter />
                       </a>
@@ -138,7 +156,7 @@ const DirectorsPage = () => {
                       <a
                         href={director.facebook}
                         className="w-9 h-9 flex items-center justify-center rounded-full border text-slate-500 
-                         hover:bg-[#1877F2] hover:text-white transition"
+                     hover:bg-[#1877F2] hover:text-white transition"
                       >
                         <FaFacebookF />
                       </a>
@@ -150,6 +168,7 @@ const DirectorsPage = () => {
           </div>
         </div>
       </main>
+
 
       {selectedDirector && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50" onClick={closeDetails}>
