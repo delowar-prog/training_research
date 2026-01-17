@@ -21,16 +21,16 @@ const Overview = () => {
 
         <div className="mt-8 grid md:grid-cols-2 gap-8">
           <div
-            className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 sm:p-8 reveal dark:bg-slate-900 dark:border-slate-800"
+            className="bg-orange-400 rounded-2xl shadow-sm border border-slate-100 p-6 sm:p-8 reveal dark:bg-slate-900 dark:border-slate-800"
             data-reveal
             data-reveal-delay="120"
           >
-            <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">Our Mission</h3>
-            <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed dark:text-slate-300">
+            <h3 className="text-lg font-semibold text-white dark:text-slate-100">Our Mission</h3>
+            <p className="mt-3 text-sm sm:text-base text-white leading-relaxed dark:text-slate-300">
               To empower professionals, students, and organizations with practical skills and
               research-driven insights that drive sustainable growth, innovation, and social impact.
             </p>
-            <ul className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+            <ul className="mt-4 space-y-2 text-sm text-white dark:text-slate-300">
               <li className="flex items-start space-x-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary-500" />
                 <span>Deliver industry-aligned training programs.</span>
@@ -47,7 +47,7 @@ const Overview = () => {
           </div>
 
           <div
-            className="bg-slate-900 rounded-2xl shadow-sm p-6 sm:p-8 text-slate-50 reveal dark:bg-slate-900"
+            className="bg-indigo-600 rounded-2xl shadow-sm p-6 sm:p-8 text-slate-50 reveal dark:bg-slate-900"
             data-reveal
             data-reveal-delay="240"
           >

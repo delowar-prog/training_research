@@ -78,7 +78,7 @@ const Hero = () => {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-r from-indigo-300 to-orange-300">
-      <div className="mx-auto flex min-h-[70vh] max-w-6xl flex-col items-center gap-12 px-4 py-12 sm:px-6 lg:flex-row lg:py-20 lg:px-8">
+      <div className="mx-auto flex min-h-[70vh] max-w-7xl flex-col items-center gap-12 px-4 py-12 sm:px-6 lg:flex-row lg:py-20 lg:px-8">
         {/* LEFT CONTENT */}
         <div className="relative z-10 max-w-3xl text-center lg:text-left">
           <span className="mb-4 inline-flex items-center rounded-full bg-white/25 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-primary-600 backdrop-blur">

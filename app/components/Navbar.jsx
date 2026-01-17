@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
-const Navbar = () => {
+const Navbar = ({ isTopbarVisible }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [theme, setTheme] = useState("light");
   const [isSwitching, setIsSwitching] = useState(false);
@@ -64,7 +64,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-30 bg-white/80 backdrop-blur border-b border-slate-200 dark:bg-slate-950/80 dark:border-slate-800">
+    <header className={`sticky ${isTopbarVisible ? 'top-10' : 'top-0'} z-30 bg-white/80 backdrop-blur border-b border-slate-200 dark:bg-slate-950/80 dark:border-slate-800 transition-all duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo / Brand */}
