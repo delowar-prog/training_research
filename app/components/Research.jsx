@@ -2,7 +2,7 @@ import React from "react";
 
 const Research = () => {
   return (
-    <section id="research" className="py-16 lg:py-20 bg-slate-900 text-slate-50 dark:bg-slate-950">
+    <section id="research" className="py-16 lg:py-20 bg-indigo-700 text-slate-50 dark:bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4 reveal" data-reveal>
           <div>

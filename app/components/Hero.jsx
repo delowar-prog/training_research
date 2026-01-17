@@ -146,7 +146,7 @@ const Hero = () => {
         </div>
 
         {/* RIGHT SLIDER CARD */}
-        <div className="relative z-10 flex w-full max-w-3xl justify-center lg:max-w-3xl overflow-hidden h-full">
+        <div className="relative z-10 flex w-full max-w-3xl justify-center lg:max-w-3xl overflow-hidden h-full border-8 border-gray-800 rounded-lg shadow-2xl bg-indigo-700 dark:bg-gray-900">
          
           <div className="overflow-hidden w-full h-full">
             <div
