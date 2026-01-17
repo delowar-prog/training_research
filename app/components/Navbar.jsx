@@ -150,12 +150,12 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <a
-              href="#trainings"
+            <Link
+              href="/trainings"
               className="text-slate-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-300"
             >
               Trainings
-            </a>
+            </Link>
             <a
               href="#research"
               className="text-slate-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-300"
@@ -305,13 +305,13 @@ const Navbar = () => {
               </a>
             </div>
           </div>
-          <a
-            href="#trainings"
+          <Link
+            href="/trainings"
             className="block py-1 text-slate-700 hover:text-primary-600 dark:text-slate-200 dark:hover:text-primary-300"
             onClick={() => setIsOpen(false)}
           >
             Trainings
-          </a>
+          </Link>
           <a
             href="#research"
             className="block py-1 text-slate-700 hover:text-primary-600 dark:text-slate-200 dark:hover:text-primary-300"

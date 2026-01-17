@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import RevealObserver from "../components/RevealObserver";
 import { Mail, Phone } from "lucide-react";
 import { FaLinkedinIn, FaXTwitter, FaFacebookF } from "react-icons/fa6";
@@ -63,8 +61,7 @@ const DirectorsPage = () => {
   };
 
   return (
-    <div className="bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
-      <Navbar />
+    <>
       <RevealObserver />
       <main className="py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -180,9 +177,7 @@ const DirectorsPage = () => {
           </div>
         </div>
       )}
-
-      <Footer />
-    </div>
+    </>
   );
 };
 
