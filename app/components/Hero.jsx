@@ -34,120 +34,154 @@ const CountUp = ({ value, duration = 1800 }) => {
 
     frame = requestAnimationFrame(step);
     return () => {
-      if (frame) {
-        cancelAnimationFrame(frame);
-      }
+      if (frame) cancelAnimationFrame(frame);
     };
   }, [value, duration]);
 
   return <span>{display.toLocaleString()}</span>;
 };
 
-const Hero = () => {
-  return (
-    <section className="relative min-h-[70vh] overflow-hidden">
-      <div className="absolute inset-0">
-        <div
-          aria-hidden="true"
-          className="hero-slide hero-slide-1"
-          style={{
-            backgroundImage:
-              "url('/hero/hero-1.jpg')",
-          }}
-        />
-        <div
-          aria-hidden="true"
-          className="hero-slide hero-slide-2"
-          style={{
-            backgroundImage:
-              "url('/hero/hero-2.jpg')",
-          }}
-        />
-        <div
-          aria-hidden="true"
-          className="hero-slide hero-slide-3"
-          style={{
-            backgroundImage:
-              "url('/hero/hero-3.jpg')",
-          }}
-        />
-        <div className="absolute inset-0 bg-slate-950/50" />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/50 to-slate-950/10" />
-      </div>
+const slides = [
+  {
+    id: 0,
+    image: "/hero/hero-1.png",
+    label: "Creative Learning",
+    bg: "from-rose-500 via-rose-400 to-orange-300",
+  },
+  {
+    id: 1,
+    image: "/hero/hero-2.png",
+    label: "Skilled Manpower",
+    bg: "from-sky-500 via-sky-400 to-cyan-300",
+  },
+  {
+    id: 2,
+    image: "/hero/hero-3.png",
+    label: "Future Entrepreneur",
+    bg: "from-violet-500 via-fuchsia-400 to-pink-300",
+  },
+];
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-        <div className="text-white">
-          <span
-            className="mb-4 inline-flex items-center rounded-full bg-white/15 px-3 py-1 text-xs font-medium text-primary-100 backdrop-blur reveal"
-            data-reveal
-          >
-            Training &bull; Research &bull; Innovation
+const Hero = () => {
+  const [active, setActive] = useState(0);
+
+  // auto-slide
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActive((prev) => (prev + 1) % slides.length);
+    }, 6000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const currentSlide = slides[active];
+
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-r from-indigo-300 to-orange-300">
+      <div className="mx-auto flex min-h-[70vh] max-w-6xl flex-col items-center gap-12 px-4 py-12 sm:px-6 lg:flex-row lg:py-20 lg:px-8">
+        {/* LEFT CONTENT */}
+        <div className="relative z-10 max-w-3xl text-center lg:text-left">
+          <span className="mb-4 inline-flex items-center rounded-full bg-white/25 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-primary-600 backdrop-blur">
+            Training • Freelancer • Entrepreneurship
           </span>
-          <h1
-            className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-6xl reveal"
-            data-reveal
-            data-reveal-delay="120"
-          >
-            Build Future-Ready Skills &amp; Drive{" "}
-            <span className="text-primary-200">Impactful Research</span>
+
+          <h1 className="text-xl font-bold tracking-tight text-gray-700 sm:text-4xl lg:text-4xl">
+            Creating Skilled Manpower,{" "}
+            <span className="whitespace-nowrap text-primary-600">
+              Freelancer &amp; Entrepreneur
+            </span>
           </h1>
-          <p
-            className="mt-4 text-base text-slate-100/90 sm:text-lg lg:text-xl reveal"
-            data-reveal
-            data-reveal-delay="240"
-          >
-            Our institute blends hands-on professional training with applied research to help
-            individuals, organizations, and communities grow with confidence.
+
+          <p className="mt-4 text-sm text-gray-800 sm:text-base">
+            Pioneering professional skill development with expert mentors,
+            ensuring continuous success through strategic job placements in the
+            tech sector.
           </p>
-          <div
-            className="mt-6 flex flex-wrap items-center gap-3 reveal"
-            data-reveal
-            data-reveal-delay="360"
-          >
+
+          {/* Stats */}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-left lg:justify-start">
+            <div>
+              <p className="text-2xl font-bold text-black">
+                <CountUp value={19} />+
+              </p>
+              <p className="text-xs font-medium text-black">
+                Years of Excellence
+              </p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-black">
+                <CountUp value={12000} />+
+              </p>
+              <p className="text-xs font-medium text-black">
+                Trained Learners
+              </p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-black">
+                <CountUp value={350} />+
+              </p>
+              <p className="text-xs font-medium text-black">
+                Corporate Partners
+              </p>
+            </div>
+          </div>
+
+          {/* Buttons */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
             <a
-              href="#trainings"
-              className="inline-flex items-center rounded-full bg-primary-600 px-6 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-primary-500"
+              href="#courses"
+              className="inline-flex items-center rounded-full bg-sky-600 px-6 py-2.5 text-sm font-semibold text-white shadow-md shadow-sky-200 transition hover:bg-sky-500"
             >
-              View Trainings
+              Find The Course
+              <span className="ml-2 text-lg">↗</span>
             </a>
             <a
-              href="#research"
-              className="inline-flex items-center rounded-full border border-white/40 px-6 py-2.5 text-sm font-medium text-white transition hover:border-primary-300 hover:text-primary-200"
+              href="#seminar"
+              className="inline-flex items-center rounded-full border border-white/40 px-6 py-2.5 text-sm font-semibold text-white transition hover:border-primary-300 hover:text-primary-200"
             >
-              Explore Research
+              Join Free Seminar
+              <span className="ml-2 text-base">▶</span>
             </a>
           </div>
-          <dl className="mt-10 grid grid-cols-1 gap-6 text-left sm:grid-cols-3">
-            <div className="reveal" data-reveal data-reveal-delay="480">
-              <dt className="text-sm uppercase tracking-wide text-slate-200/80">
-                Professionals Trained
-              </dt>
-              <dd className="mt-2 text-3xl font-semibold text-white sm:text-4xl">
-                <CountUp value={5000} />
-                <span>+</span>
-              </dd>
-            </div>
-            <div className="reveal" data-reveal data-reveal-delay="600">
-              <dt className="text-sm uppercase tracking-wide text-slate-200/80">
-                Research Projects
-              </dt>
-              <dd className="mt-2 text-3xl font-semibold text-white sm:text-4xl">
-                <CountUp value={120} />
-                <span>+</span>
-              </dd>
-            </div>
-            <div className="reveal" data-reveal data-reveal-delay="720">
-              <dt className="text-sm uppercase tracking-wide text-slate-200/80">
-                Industry Partners
-              </dt>
-              <dd className="mt-2 text-3xl font-semibold text-white sm:text-4xl">
-                <CountUp value={30} />
-                <span>+</span>
-              </dd>
-            </div>
-          </dl>
         </div>
-      </div>
+
+        {/* RIGHT SLIDER CARD */}
+        <div className="relative z-10 flex w-full max-w-3xl justify-center lg:max-w-3xl overflow-hidden h-full">
+         
+          <div className="overflow-hidden w-full h-full">
+            <div
+              className="flex transition-transform duration-700 h-full"
+              style={{ transform: `translateX(-${active * 100}%)` }}
+            >
+              {slides.map((slide) => (
+                <img
+                  key={slide.id}
+                  src={slide.image}
+                  alt={slide.label}
+                  className="w-full flex-shrink-0 object-contain animate-sway"
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* slider dots */}
+            <div className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2">
+              {slides.map((slide, index) => (
+                <button
+                  key={slide.id}
+                  onClick={() => setActive(index)}
+                  className={
+                    "h-2.5 rounded-full transition-all " +
+                    (index === active
+                      ? "w-5 bg-white"
+                      : "w-2 bg-white/50 hover:bg-white/80")
+                  }
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
     </section>
   );
 };
