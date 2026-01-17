@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,7 +68,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo / Brand */}
-          <a href="#home" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2">
             <div className="h-9 w-9 rounded-xl bg-primary-600 flex items-center justify-center text-white font-bold text-lg">
               TI
             </div>
@@ -79,16 +80,16 @@ const Navbar = () => {
                 Learning &bull; Innovation &bull; Impact
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center space-x-6 text-sm">
-            <a
-              href="#home"
+            <Link
+              href="/"
               className="text-slate-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-300"
             >
               Home
-            </a>
+            </Link>
             <div className="relative group">
               <button
                 type="button"
@@ -121,12 +122,12 @@ const Navbar = () => {
                     >
                       Mission &amp; Vission
                     </a>
-                    <a
-                      href="#"
+                    <Link
+                      href="/directors"
                       className="block px-4 py-2 transition hover:bg-slate-50 hover:text-primary-600 dark:hover:bg-slate-900/60 dark:hover:text-primary-300"
                     >
                       Directors Profile
-                    </a>
+                    </Link>
                     <a
                       href="#overview"
                       className="block px-4 py-2 transition hover:bg-slate-50 hover:text-primary-600 dark:hover:bg-slate-900/60 dark:hover:text-primary-300"
@@ -255,13 +256,13 @@ const Navbar = () => {
         }`}
       >
         <div className="px-4 py-3 space-y-2 text-sm">
-          <a
-            href="#home"
+          <Link
+            href="/"
             className="block py-1 text-slate-700 hover:text-primary-600 dark:text-slate-200 dark:hover:text-primary-300"
             onClick={() => setIsOpen(false)}
           >
             Home
-          </a>
+          </Link>
           <div className="pt-1">
             <p className="text-xs font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">
               About Us
@@ -274,13 +275,13 @@ const Navbar = () => {
               >
                 Mission &amp; Vission
               </a>
-              <a
-                href="#"
+              <Link
+                href="/directors"
                 className="block py-1 text-slate-700 hover:text-primary-600 dark:text-slate-200 dark:hover:text-primary-300"
                 onClick={() => setIsOpen(false)}
               >
                 Directors Profile
-              </a>
+              </Link>
               <a
                 href="#overview"
                 className="block py-1 text-slate-700 hover:text-primary-600 dark:text-slate-200 dark:hover:text-primary-300"

@@ -24,7 +24,7 @@ const Trainings = () => {
         <div className="mt-8 grid md:grid-cols-3 gap-6">
           {/* Training Card 1 */}
           <article
-            className="flex flex-col bg-slate-50 rounded-2xl border border-slate-200/80 p-5 reveal dark:bg-slate-900 dark:border-slate-800"
+            className="flex flex-col bg-slate-50 rounded-2xl border border-slate-200/80 p-5 reveal dark:bg-slate-900 dark:border-slate-800 transition duration-900 ease-in-out hover:-translate-y-1 hover:cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800"
             data-reveal
             data-reveal-delay="120"
           >
@@ -57,7 +57,7 @@ const Trainings = () => {
 
           {/* Card 2 */}
           <article
-            className="flex flex-col bg-slate-50 rounded-2xl border border-slate-200/80 p-5 reveal dark:bg-slate-900 dark:border-slate-800"
+            className="flex flex-col bg-slate-50 rounded-2xl border border-slate-200/80 p-5 reveal dark:bg-slate-900 dark:border-slate-800 transition-transform duration-300 ease-in-out hover:-translate-y-[10px] hover:cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800"
             data-reveal
             data-reveal-delay="240"
           >
@@ -90,7 +90,7 @@ const Trainings = () => {
 
           {/* Card 3 */}
           <article
-            className="flex flex-col bg-slate-50 rounded-2xl border border-slate-200/80 p-5 reveal dark:bg-slate-900 dark:border-slate-800"
+            className="flex flex-col bg-slate-50 rounded-2xl border border-slate-200/80 p-5 reveal dark:bg-slate-900 dark:border-slate-800 transition-transform duration-300 ease-in-out hover:-translate-y-[10px] hover:cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800"
             data-reveal
             data-reveal-delay="360"
           >
