@@ -162,12 +162,12 @@ const Navbar = ({ isTopbarVisible }) => {
             >
               Research
             </a>
-            <a
-              href="#notices"
+            <Link
+              href="/notices"
               className="text-slate-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-300"
             >
               Notices
-            </a>
+            </Link>
             <a
               href="#partners"
               className="text-slate-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-300"
@@ -319,13 +319,13 @@ const Navbar = ({ isTopbarVisible }) => {
           >
             Research
           </a>
-          <a
-            href="#notices"
+          <Link
+            href="/notices"
             className="block py-1 text-slate-700 hover:text-primary-600 dark:text-slate-200 dark:hover:text-primary-300"
             onClick={() => setIsOpen(false)}
           >
             Notices
-          </a>
+          </Link>
           <a
             href="#partners"
             className="block py-1 text-slate-700 hover:text-primary-600 dark:text-slate-200 dark:hover:text-primary-300"
